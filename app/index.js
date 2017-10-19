@@ -71,6 +71,7 @@ module.exports = class extends Generator {
     }
 
     writing() {
+        this.fs.copy(this.templatePath('.nvmrc'), '.nvmrc');
         this.fs.copy(this.templatePath('config'), 'config');
         this.fs.copy(this.templatePath('doc'), 'doc');
         this.fs.copy(this.templatePath('features'), 'features');
