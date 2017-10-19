@@ -1,4 +1,4 @@
-# {proj} 
+# Hyperledger Composer Network Generator
 Chevdor, <chevdor@gmail.com>
 v0.1, 2014-08-24
 :idprefix:
@@ -19,7 +19,7 @@ image::https://asciinema.org/a/89762.png[link='https://asciinema.org/a/89762']
 == Getting Started
 
 === What is this generator about?
-*{proj}* is all about getting started quickly. Running this generator will build a simple dapp for Ethereum. Better than just a boilerplate, the generated file is already tuned with your name, etc...
+*{proj}* is all about getting started quickly. Running this generator will build a simple network for Hyperledger Composer. Better than just a boilerplate, the generated file is already tuned with your name, etc...
 
 Read on a give a try.
 
@@ -68,5 +68,3 @@ yo {proj}
 == License
 
 MIT
-
-
