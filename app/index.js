@@ -59,7 +59,7 @@ var HLComposerNetworkGenerator = yeoman.generators.Base.extend({
             type: 'input',
             name: 'License',
             message: 'What license would you like?',
-            default: 'Apache License, Version 2.0'
+            default: 'Apache License Version 2.0'
         }];
 
         this.prompt(prompts, function(props) {
@@ -80,19 +80,18 @@ var HLComposerNetworkGenerator = yeoman.generators.Base.extend({
             this.directory('config', 'doc', 'features', logDirectoryCopy)
 
             this.template('lib/sample.js');
-            this.template('model/model.cto');
+            this.template('models/sample.cto');
             this.template('test/sample.js');
 
-            this.copy(['header.txt',
-                'index.js', '*.svg',
+            this.copy('header.txt');
+            this.copy('index.js');
+            this.copy('networkimage.svg');
+            this.copy('networkimageanimated.svg');
 
-            ]);
-
-            this.template(['jdoc.json',
-                'package.json',
-                'permissions.acl',
-                'README.adoc'
-            ]);
+            this.template('jsdoc.json');
+            this.template('package.json');
+            this.template('permissions.acl');
+            this.template('README.adoc');
         },
     },
 

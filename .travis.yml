@@ -3,5 +3,5 @@ node_js:
   - '4.0'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-ethdapp' ]; then cd .. && eval "mv $currentfolder generator-ethdapp" && cd generator-ethdapp; fi
+  - if [ "$currentfolder" != 'generator-hyperledger-composer-network' ]; then cd .. && eval "mv $currentfolder generator-hyperledger-composer-network" && cd generator-hyperledger-composer-network; fi
 

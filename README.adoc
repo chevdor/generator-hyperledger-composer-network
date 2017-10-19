@@ -1,4 +1,4 @@
-# generator-ethdapp 
+# {proj} 
 Chevdor, <chevdor@gmail.com>
 v0.1, 2014-08-24
 :idprefix:
@@ -7,10 +7,10 @@ v0.1, 2014-08-24
 :endash:
 
 ifdef::env-github[]
-image:https://travis-ci.org/chevdor/generator-ethdapp.svg?branch=master["Build Status", link="https://travis-ci.org/chevdor/generator-ethdapp"]
+image:https://travis-ci.org/chevdor/{proj}.svg?branch=master["Build Status", link="https://travis-ci.org/chevdor/{proj}"]
 endif::env-github[]
 
-:proj: generator-ethdapp
+:proj: hyperledger-composer-network
 
 == First look
 
@@ -41,16 +41,16 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-ethdapp from npm, run:
+To install {proj} from npm, run:
 
 ```bash
-npm install -g generator-ethdapp
+npm install -g {proj}
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo ethdapp
+yo {proj}
 ```
 
 === Getting To Know Yeoman
@@ -59,36 +59,11 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
-== Generating your Dapp
+== Generating your Network
 
-For a generic Dapp:
 ```bash
-yo ethdapp
+yo {proj}
 ```
-
-For a Dapp taylored to Parity:
-```bash
-yo ethdapp:parity
-```
-
-Then answer the questions. Once you are done, run the deploy script:
-```bash
-./deploy.sh
-```
-
-Then (re)start Parity:
-```bash
-parity ui
-```
-
-You will see your app listed there:
-
-image:images/parity.png[]
-
-Click on that link and you will see your DAPP:
-
-image:images/generated.png[]
-
 
 == License
 

@@ -4,7 +4,7 @@
   },
   "name": "<%= NetworkId %>",
   "version": "<%= NetworkVersion %>",
-  "description": "<%= NetworkDescription %>",
+  "description": "<%= Description %>",
   "networkImage": "https://hyperledger.github.io/composer-sample-networks/packages/basic-sample-network/networkimage.svg",
   "networkImageanimated": "https://hyperledger.github.io/composer-sample-networks/packages/basic-sample-network/networkimageanimated.svg",
   "scripts": {
