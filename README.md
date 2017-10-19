@@ -47,11 +47,11 @@ even a Chrome extension.
 
 To install hyperledger-composer-network from npm, run:
 
-\`\`\`bash npm install -g hyperledger-composer-network \`\`\`
+    npm install -g {proj}
 
 Finally, initiate the generator:
 
-\`\`\`bash yo hyperledger-composer-network \`\`\`
+    yo {proj}
 
 Getting To Know Yeoman
 ----------------------
@@ -68,7 +68,7 @@ Guide\](<https://github.com/yeoman/yeoman/wiki/Getting-Started>).
 Generating your Network
 =======================
 
-\`\`\`bash yo hyperledger-composer-network \`\`\`
+    yo {proj}
 
 License
 =======

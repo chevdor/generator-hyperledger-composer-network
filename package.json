@@ -1,6 +1,6 @@
 {
   "name": "generator-hyperledger-composer-network",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Hyperledger Composer Network generator for Yeoman",
   "license": "MIT",
   "main": "app/index.js",
