@@ -1,4 +1,6 @@
 
 == Model
 
-include::../models/sample.cto
+```
+include::../models/sample.cto[]
+```

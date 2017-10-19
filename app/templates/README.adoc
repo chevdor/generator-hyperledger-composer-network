@@ -2,7 +2,7 @@
 
 This business network defines the following models:
 
-include::doc/source.adoc
+include::doc/source.adoc[]
 
 To test this Business Network Definition in the **Test** tab:
 

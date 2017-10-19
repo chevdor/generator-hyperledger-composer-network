@@ -29,7 +29,7 @@
     "composer-network"
   ],
   "author": "<%= Author %>",
-  "license": "<%= Licence %>",
+  "license": "Apache LICENSE-2.0",
   "devDependencies": {
     "browserfs": "^1.2.0",
     "chai": "^3.5.0",

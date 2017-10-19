@@ -2,35 +2,31 @@
 
 var util = require('util');
 var path = require('path');
-var yeoman = require('yeoman-generator');
+var Generator = require('yeoman-generator');
 var yosay = require('yosay');
 var os = require('os');
 
-function logDirectoryCopy(body, src, dest, options) {
-    console.log(' + ' + src);
-}
-
-var HLComposerNetworkGenerator = yeoman.generators.Base.extend({
-    initializing: function() {
+module.exports = class extends Generator {
+    initializing() {
         this.pkg = require('../package.json');
-    },
+    }
 
-    prompting: function() {
-        var done = this.async();
-
+    prompting() {
         // Have Yeoman greet the user.
         this.log(yosay(
             'Welcome to this Hyperledger Composer Network Generator!'
         ));
 
-        var prompts = [{
+        return this.prompt([{
             type: 'input',
             message: 'Let´s start with your name?',
             name: 'Author',
+            store: true
         }, {
             type: 'input',
             message: 'What about your email?',
             name: 'Email',
+            store: true
         }, {
             type: 'input',
             name: 'NetworkNamespace',
@@ -60,9 +56,9 @@ var HLComposerNetworkGenerator = yeoman.generators.Base.extend({
             name: 'License',
             message: 'What license would you like?',
             default: 'Apache License Version 2.0'
-        }];
-
-        this.prompt(prompts, function(props) {
+        }]).then((props) => {
+            // this.log('app name', answers.name);
+            // this.log('cool feature', answers.cool);
             this.Author = props.Author;
             this.Email = props.Email;
             this.NetworkNamespace = props.NetworkNamespace;
@@ -71,33 +67,48 @@ var HLComposerNetworkGenerator = yeoman.generators.Base.extend({
             this.Description = props.Description;
             this.NetworkVersion = props.NetworkVersion;
             this.License = props.License;
-            done();
-        }.bind(this));
-    },
-
-    writing: {
-        app: function() {
-            this.directory('config', 'doc', 'features', logDirectoryCopy)
-
-            this.template('lib/sample.js');
-            this.template('models/sample.cto');
-            this.template('test/sample.js');
-
-            this.copy('header.txt');
-            this.copy('index.js');
-            this.copy('networkimage.svg');
-            this.copy('networkimageanimated.svg');
-
-            this.template('jsdoc.json');
-            this.template('package.json');
-            this.template('permissions.acl');
-            this.template('README.adoc');
-        },
-    },
-
-    end: function() {
-        // nothing to do here yet
+        });
     }
-});
 
-module.exports = HLComposerNetworkGenerator;
+    writing() {
+        this.fs.copy(this.templatePath('config'), 'config');
+        this.fs.copy(this.templatePath('doc'), 'doc');
+        this.fs.copy(this.templatePath('features'), 'features');
+
+        this.fs.copyTpl(
+            this.templatePath('lib/sample.js'),
+            this.destinationPath('lib/sample.js'), this
+        );
+
+        this.fs.copyTpl(
+            this.templatePath('models/sample.cto'),
+            this.destinationPath('models/sample.cto'), this
+        );
+        this.fs.copyTpl(
+            this.templatePath('test/sample.js'),
+            this.destinationPath('test/sample.js'), this
+        );
+
+        this.fs.copy(this.templatePath('header.txt'), 'header.txt');
+        this.fs.copy(this.templatePath('index.js'), 'index.js');
+        this.fs.copy(this.templatePath('networkimage.svg'), 'networkimage.svg');
+        this.fs.copy(this.templatePath('networkimageanimated.svg'), 'networkimageanimated.svg');
+
+        this.fs.copyTpl(
+            this.templatePath('jsdoc.json'),
+            this.destinationPath('jsdoc.json'), this
+        );
+        this.fs.copyTpl(
+            this.templatePath('package.json'),
+            this.destinationPath('package.json'), this
+        );
+        this.fs.copyTpl(
+            this.templatePath('permissions.acl'),
+            this.destinationPath('permissions.acl'), this
+        );
+        this.fs.copyTpl(
+            this.templatePath('README.adoc'),
+            this.destinationPath('README.adoc'), this
+        );
+    }
+}
