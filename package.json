@@ -5,6 +5,9 @@
   "license": "MIT",
   "main": "app/index.js",
   "repository": "chevdor/generator-hyperledger-composer-network",
+  "scripts": {
+    "prepublish": "asciidoc -b docbook README.adoc && pandoc -f docbook -t markdown_strict README.xml -o README.md && rm README.xml"
+  },
   "author": {
     "name": "Chevdor",
     "email": "",
