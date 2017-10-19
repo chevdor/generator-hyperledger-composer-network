@@ -1,5 +1,6 @@
-Chevdor, &lt;<chevdor@gmail.com>&gt; v0.1, 2014-08-24 :idprefix:
-:idseparator: - :experimental: :endash:
+\# Hyperledger Composer Network Generator Chevdor,
+&lt;<chevdor@gmail.com>&gt; v0.1, 2014-08-24 :idprefix: :idseparator: -
+:experimental: :endash:
 
 First look
 ==========
@@ -13,9 +14,9 @@ What is this generator about?
 -----------------------------
 
 **hyperledger-composer-network** is all about getting started quickly.
-Running this generator will build a simple dapp for Ethereum. Better
-than just a boilerplate, the generated file is already tuned with your
-name, etc…
+Running this generator will build a simple network for Hyperledger
+Composer. Better than just a boilerplate, the generated file is already
+tuned with your name, etc…
 
 Read on a give a try.
 
