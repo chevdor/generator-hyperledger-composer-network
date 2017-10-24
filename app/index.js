@@ -31,7 +31,8 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'NetworkNamespace',
             message: 'A namespace will help?',
-            default: 'org.acme.sample'
+            default: 'org.acme.sample',
+            store: true
         }, {
             type: 'input',
             name: 'NetworkName',
@@ -55,7 +56,8 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'License',
             message: 'What license would you like?',
-            default: 'Apache License Version 2.0'
+            default: 'Apache License Version 2.0',
+            store: true
         }]).then((props) => {
             // this.log('app name', answers.name);
             // this.log('cool feature', answers.cool);
