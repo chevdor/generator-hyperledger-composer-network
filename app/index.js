@@ -42,7 +42,10 @@ module.exports = class extends Generator {
             type: 'input',
             name: 'NetworkId',
             message: 'We will also need an Id?',
-            default: this.appname
+            default: this.appname.replace(' ', '-'),
+            validate: function(input) {
+                return (input.indexOf(' ') == -1)
+            }
         }, {
             type: 'input',
             name: 'Description',
@@ -74,6 +77,7 @@ module.exports = class extends Generator {
 
     writing() {
         this.fs.copy(this.templatePath('.nvmrc'), '.nvmrc');
+        this.fs.copy(this.templatePath('.eslintrc.yml'), '.eslintrc.yml');
         this.fs.copy(this.templatePath('config'), 'config');
         this.fs.copy(this.templatePath('doc'), 'doc');
         this.fs.copy(this.templatePath('features'), 'features');
