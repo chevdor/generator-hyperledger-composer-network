@@ -12,6 +12,8 @@
  * limitations under the License.
  */
 
+'use strict';
+
 /**
  * Sample transaction processor function.
  * @param {<%= NetworkNamespace %>.SampleTransaction} tx The sample transaction instance.
